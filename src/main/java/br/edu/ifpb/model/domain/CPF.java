@@ -1,4 +1,4 @@
-package br.edu.ifpb.domain;
+package br.edu.ifpb.model.domain;
 
 /**
  * @author Ricardo Job

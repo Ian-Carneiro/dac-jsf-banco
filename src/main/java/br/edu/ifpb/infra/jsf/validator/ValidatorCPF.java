@@ -1,6 +1,5 @@
 package br.edu.ifpb.infra.jsf.validator;
 
-import br.edu.ifpb.domain.CPF;
 import java.util.Arrays;
 import java.util.List;
 import javax.faces.application.FacesMessage;
@@ -9,6 +8,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.validator.FacesValidator;
 import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
+
+import br.edu.ifpb.model.domain.CPF;
 
 /**
  * @author Ricardo Job
