@@ -57,7 +57,7 @@ public class IntegranteDaoImpl implements IntegranteDao {
 
 	@Override
 	public List<Integrante> buscarPorBanda(int idBanda) throws SQLException {
-		String sql = "SELECT * FROM integrante i, integrante_banda ib WHERE b.id_banda = ?";
+		String sql = "SELECT * FROM integrante i, integrante_banda ib WHERE ib.id_banda = ? AND i.id=ib.id_integrante";
 		List<Integrante> integrantes = new ArrayList<>();
 		PreparedStatement ps = connection.prepareStatement(sql);
 		ps.setInt(1,idBanda);
