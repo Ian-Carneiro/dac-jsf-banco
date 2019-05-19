@@ -3,6 +3,9 @@ package br.edu.ifpb.model.domain;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * @author Mailson
+ */
 public class Banda {
 
     private int id;

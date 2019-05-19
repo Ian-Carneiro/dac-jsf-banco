@@ -11,6 +11,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Mailson
+ */
+
 public class BandaDaoImpl implements BandaDao {
 
     private Connection connection;

@@ -3,6 +3,9 @@ package br.edu.ifpb.model.dao.intefaces;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * @author Mailson
+ */
 public interface Dao <T> {
     void cadastrar (T object) throws SQLException;
     void excluir (T object) throws SQLException;
