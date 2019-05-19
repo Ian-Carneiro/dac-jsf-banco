@@ -1,7 +1,7 @@
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-import br.edu.ifpb.model.dao.intefaces.IntegranteDaoImpl;
+import br.edu.ifpb.model.dao.implementation.IntegranteDaoImpl;
 import br.edu.ifpb.model.domain.CPF;
 import br.edu.ifpb.model.domain.Integrante;
 

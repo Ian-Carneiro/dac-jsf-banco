@@ -1,4 +1,4 @@
-package br.edu.ifpb.model.dao.intefaces;
+package br.edu.ifpb.model.dao.implementation;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.edu.ifpb.jdbc.ConnectionFactory;
-import br.edu.ifpb.model.dao.implementation.IntegranteDao;
+import br.edu.ifpb.model.dao.intefaces.IntegranteDao;
 import br.edu.ifpb.model.domain.CPF;
 import br.edu.ifpb.model.domain.Integrante;
 
