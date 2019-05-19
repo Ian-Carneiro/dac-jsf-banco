@@ -2,6 +2,9 @@ package br.edu.ifpb.web.jsf;
 
 import java.io.Serializable;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
@@ -17,12 +20,11 @@ public class BandaBean implements Serializable{
 	
 	private BandaDao bandaService;
 	
-	private Banda banda;
+	private Banda banda = new Banda();
 	
 	@PostConstruct
 	public void init() {
 		bandaService = new BandaDaoImpl();
-		banda = new Banda();
 	}
 	
 	public String salvar() {
@@ -52,6 +54,22 @@ public class BandaBean implements Serializable{
 			e.printStackTrace();
 		}
 		return "list";
+	}
+	
+	public void selecionar(Banda banda) {
+		this.banda = banda;
+	}
+	
+	public List<Banda> listarBandas(){
+//		return Arrays.asList(new Banda(1,"Las Vegas","Fantasia"),new Banda(2,"Florianópolis","Fantasia"));
+		List<Banda> bandas = new ArrayList<>();
+		try {
+			bandas = bandaService.listar();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return bandas;
 	}
 	
 	public Banda getBanda() {
