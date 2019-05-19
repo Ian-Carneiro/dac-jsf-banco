@@ -19,7 +19,10 @@ public class CPF {
     }
 
     public String formatado() {
-        return String.format(
+    	if(numero.split(".").length == 3) {
+    		return numero;
+    	}
+    	return String.format(
             "%s.%s.%s-%s",
             this.numero.substring(0,3), // 111222
             this.numero.substring(3,6),
