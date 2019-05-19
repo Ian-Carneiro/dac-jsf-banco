@@ -8,9 +8,10 @@ import br.edu.ifpb.model.domain.Integrante;
 public class App {
 
 	public static void main(String[] args) throws SQLException {
-		Integrante i = new Integrante(1, "Zé", LocalDate.now(), new CPF("12312312312"));
+		Integrante i = new Integrante(1, "Zé", LocalDate.now(), new CPF("12312312313"));
 		IntegranteDaoImpl dao = new IntegranteDaoImpl();
 		dao.cadastrar(i);
+		System.out.println(dao.listar());
 		
 	}
 
