@@ -24,7 +24,12 @@
 							<h:inputText id="fantasia"
 								value="#{bandaBean.banda.nomeFantasia}" />
 						</div>
-
+						<div class="input-field">
+							<h:selectOneMenu value="#{bandaBean.banda.integrantes}" converter="converter.integrante">
+								<f:selectItem itemLabel="-- NENHUM INTEGRANTE --" />
+								<f:selectItems value="#{integranteBean.listarTodosOsIntegrantes()}" var="int" itemLabel="#{int.nome}" />
+							</h:selectOneMenu>
+						</div>
 						<h:commandButton value="Cadastrar" action="#{bandaBean.salvar()}"
 							class="btn waves-effect waves-teal right" />
 						<h:commandButton value="Atualizar" action="#{bandaBean.atualizar}"

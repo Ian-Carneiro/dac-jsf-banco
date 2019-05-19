@@ -6,9 +6,57 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-<ui:composition template="">
+<ui:composition template="../template.xhtml">
 	<ui:define name="centro">
-		
+		<h3 class="blue-text">Buscar uma Banda</h3>
+		<a class="" href="list.xhtml">Listar Bandas</a>
+		<h:form>
+			<div class="row">
+				<div class="col s12 l10 offset-l1">
+					<h:form>
+						<h:messages layout="table" class="red-text"></h:messages>
+						<div class="input-field">
+							<h:outputLabel for="pesquisa">Local de Origem:</h:outputLabel>
+							<h:inputText id="pesquisa"
+								value="#{bandaBean.consulta}" />
+						</div>
+						<h:commandButton value="Buscar" action="#{bandaBean.buscar}"
+							class="btn waves-effect waves-teal right" />
+					</h:form>
+					<ul class="collection with-header">
+						<li class="collection-item">
+							<div class="row">
+								<div class="col l4">
+									<b>Id</b>
+								</div>
+								<div class="col l3">
+									<b>Local de Origem</b>
+								</div>
+								<div class="col l3">
+									<b>Nome Fantasia</b>
+								</div>
+								<div class="col"></div>
+								<div class="col"></div>
+							</div>
+						</li>
+
+						<li class="collection-item">
+							<div class="row">
+								<div class="col l4">
+									<h:outputText value="#{bandaBean.resultadoConsulta.id}"></h:outputText>
+								</div>
+								<div class="col l3">
+									<h:outputText value="#{bandaBean.resultadoConsulta.localDeOrigem}"></h:outputText>
+								</div>
+								<div class="col l3">
+									<h:outputText value="#{bandaBean.resultadoConsulta.nomeFantasia}"></h:outputText>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</h:form>
 	</ui:define>
 </ui:composition>
 </html>

@@ -21,6 +21,9 @@ public class ConvertIntegrante implements Converter{
 		if(value==null) {
 			return null;
 		}
+		if(value.equals("-- NENHUM INTEGRANTE --")) {
+			return null;
+		}
 		Integrante i;
 		try {
 			i = dao.buscarPorCpf(new CPF(value));

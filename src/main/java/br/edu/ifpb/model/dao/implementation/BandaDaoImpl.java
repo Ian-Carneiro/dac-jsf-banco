@@ -69,7 +69,7 @@ public class BandaDaoImpl implements BandaDao {
         ps.setString(1,localDeOrigem);
         ResultSet rs = ps.executeQuery();
         if(rs.next()){
-            return new Banda(rs.getInt("id"),rs.getString("localDeOrgiem"),rs.getString("nomeFantasia"));
+            return new Banda(rs.getInt("id"),rs.getString("localdeorigem"),rs.getString("nomeFantasia"));
         }
         return null;
     }

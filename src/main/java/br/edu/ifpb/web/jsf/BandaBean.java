@@ -13,6 +13,7 @@ import javax.inject.Named;
 import br.edu.ifpb.model.dao.implementation.BandaDaoImpl;
 import br.edu.ifpb.model.dao.intefaces.BandaDao;
 import br.edu.ifpb.model.domain.Banda;
+import br.edu.ifpb.model.domain.Integrante;
 
 @SessionScoped
 @Named
@@ -20,11 +21,17 @@ public class BandaBean implements Serializable{
 	
 	private BandaDao bandaService;
 	
-	private Banda banda = new Banda();
+	private Banda banda;
+	
+	private String consulta = "";
+	
+	private Banda resultadoConsulta;
 	
 	@PostConstruct
 	public void init() {
 		bandaService = new BandaDaoImpl();
+		banda = new Banda();
+		resultadoConsulta = new Banda();
 	}
 	
 	public String salvar() {
@@ -73,11 +80,36 @@ public class BandaBean implements Serializable{
 		return bandas;
 	}
 	
+	public void buscar() {
+		try {
+			resultadoConsulta = bandaService.buscarPorLocalDeOrigem(consulta);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	public Banda getBanda() {
 		return banda;
 	}
 
 	public void setBanda(Banda banda) {
 		this.banda = banda;
+	}
+
+	public Banda getResultadoConsulta() {
+		return resultadoConsulta;
+	}
+
+	public void setResultadoConsulta(Banda resultadoConsulta) {
+		this.resultadoConsulta = resultadoConsulta;
+	}
+
+	public String getConsulta() {
+		return consulta;
+	}
+
+	public void setConsulta(String consulta) {
+		this.consulta = consulta;
 	}
 }
