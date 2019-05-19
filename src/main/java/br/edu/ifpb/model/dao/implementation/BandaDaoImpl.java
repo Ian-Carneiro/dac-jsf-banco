@@ -57,7 +57,7 @@ public class BandaDaoImpl implements BandaDao {
         PreparedStatement ps = connection.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         while(rs.next()){
-            bandas.add(new Banda(rs.getInt("id"),rs.getString("localDeOrgiem"),rs.getString("nomeFantasia")));
+            bandas.add(new Banda(rs.getInt("id"),rs.getString("localdeorigem"),rs.getString("nomeFantasia")));
         }
         return bandas;
     }

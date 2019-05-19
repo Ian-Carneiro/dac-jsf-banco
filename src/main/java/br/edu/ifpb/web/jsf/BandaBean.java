@@ -56,8 +56,9 @@ public class BandaBean implements Serializable{
 		return "list";
 	}
 	
-	public void selecionar(Banda banda) {
+	public String selecionar(Banda banda) {
 		this.banda = banda;
+		return "edit?faces-redirect=true";
 	}
 	
 	public List<Banda> listarBandas(){
