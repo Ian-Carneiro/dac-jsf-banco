@@ -51,6 +51,7 @@ public class IntegranteBean implements Serializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     public String atualizar() {
