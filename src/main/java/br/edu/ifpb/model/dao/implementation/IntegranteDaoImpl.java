@@ -54,6 +54,20 @@ public class IntegranteDaoImpl implements IntegranteDao {
 		}
 		return null;
 	}
+
+	@Override
+	public List<Integrante> buscarPorBanda(int idBanda) throws SQLException {
+		String sql = "SELECT * FROM integrante i, integrante_banda ib WHERE b.id_banda = ?";
+		List<Integrante> integrantes = new ArrayList<>();
+		PreparedStatement ps = connection.prepareStatement(sql);
+		ps.setInt(1,idBanda);
+		ResultSet rs = ps.executeQuery();
+		while(rs.next()) {
+			integrantes.add(new Integrante(rs.getInt("id"), rs.getString("nome"), rs.getDate("dataDeNascimento").toLocalDate(), new CPF(rs.getString("CPF"))));
+		}
+		return integrantes;
+	}
+
 	@Override
 	public List<Integrante> listar()  throws SQLException{
 		String sql = "select * from integrante";
