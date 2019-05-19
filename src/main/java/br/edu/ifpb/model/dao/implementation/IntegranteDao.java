@@ -1,4 +1,4 @@
-package br.edu.ifpb.model;
+package br.edu.ifpb.model.dao.implementation;
 
 import java.sql.SQLException;
 import java.util.List;
