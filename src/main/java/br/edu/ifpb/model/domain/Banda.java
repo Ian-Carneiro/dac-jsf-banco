@@ -1,5 +1,6 @@
 package br.edu.ifpb.model.domain;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Banda {
@@ -7,6 +8,7 @@ public class Banda {
     private int id;
     private String localDeOrigem;
     private String nomeFantasia;
+    private List<Integrante> integrantes;
 
     public Banda() {
     }
@@ -15,6 +17,13 @@ public class Banda {
         this.id = id;
         this.localDeOrigem = localDeOrigem;
         this.nomeFantasia = nomeFantasia;
+    }
+
+    public Banda(int id, String localDeOrigem, String nomeFantasia, List<Integrante> integrantes) {
+        this.id = id;
+        this.localDeOrigem = localDeOrigem;
+        this.nomeFantasia = nomeFantasia;
+        this.integrantes = integrantes;
     }
 
     public int getId() {
@@ -41,6 +50,14 @@ public class Banda {
         this.nomeFantasia = nomeFantasia;
     }
 
+    public List<Integrante> getIntegrantes() {
+        return integrantes;
+    }
+
+    public void setIntegrantes(List<Integrante> integrantes) {
+        this.integrantes = integrantes;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -48,12 +65,13 @@ public class Banda {
         Banda banda = (Banda) o;
         return id == banda.id &&
                 Objects.equals(localDeOrigem, banda.localDeOrigem) &&
-                Objects.equals(nomeFantasia, banda.nomeFantasia);
+                Objects.equals(nomeFantasia, banda.nomeFantasia) &&
+                Objects.equals(integrantes, banda.integrantes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, localDeOrigem, nomeFantasia);
+        return Objects.hash(id, localDeOrigem, nomeFantasia, integrantes);
     }
 
     @Override
@@ -62,6 +80,7 @@ public class Banda {
                 "id=" + id +
                 ", localDeOrigem='" + localDeOrigem + '\'' +
                 ", nomeFantasia='" + nomeFantasia + '\'' +
+                ", integrantes=" + integrantes +
                 '}';
     }
 }
