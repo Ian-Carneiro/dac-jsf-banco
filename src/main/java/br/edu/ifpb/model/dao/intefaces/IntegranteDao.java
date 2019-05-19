@@ -9,5 +9,6 @@ import br.edu.ifpb.model.domain.Integrante;
 public interface IntegranteDao extends Dao<Integrante>{
 
 	Integrante buscarPorCpf(CPF cpf) throws SQLException;
+	List<Integrante> buscarPorBanda(int idBanda) throws SQLException;
 
 }
