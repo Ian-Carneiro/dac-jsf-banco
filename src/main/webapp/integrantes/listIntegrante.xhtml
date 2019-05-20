@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="../template.xhtml">
+    <ui:define name="centro">
+        <h3 class="blue-text">Listando integrantes</h3>
+        <a href="editIntegrante.xhtml">Editar</a> |
+        <h:form>
+            <ul class="collection with-header">
+                <li class="collection-item">
+                    <div class="row">
+                        <div class="col l4">
+                            <b>Id</b>
+                        </div>
+                        <div class="col l3">
+                            <b>Nome</b>
+                        </div>
+                        <div class="col l3">
+                            <b>CPF</b>
+                        </div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                    </div>
+                </li>
+                <ui:repeat var="integrante" value="#{integranteBean.listarTodosOsIntegrantes()">
+                    <li class="collection-item">
+                        <div class="row">
+                            <div class="col l4">
+                                <h:outputText value="#{integrante.id}"></h:outputText>
+                            </div>
+                            <div class="col l3">
+                                <h:outputText value="#{integrante.nome}"></h:outputText>
+                            </div>
+                            <div class="col l3">
+                                <h:outputText value="#{integrante.cpf}"></h:outputText>
+                            </div>
+                            <div class="col">
+                                <h:commandButton class="btn waves-effect waves-teal" value="x" action="#{integranteBean.excluir(integrante)}"/>
+                            </div>
+
+                        </div>
+                    </li>
+                </ui:repeat>
+            </ul>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>
