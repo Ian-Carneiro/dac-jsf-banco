@@ -1,4 +1,4 @@
-FROM postgres
+FROM postgres:10.8-alpine
 ENV POSTGRES_DB dac
 ENV POSTGRES_USER postgres
 ENV POSTGRES_PASSWORD postgres
