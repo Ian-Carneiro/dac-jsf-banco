@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="../template.xhtml">
+    <ui:define name="centro">
+        <h3 class="blue-text">Edição e cadastro de integrante</h3>
+        <h:form>
+            <div class="row">
+                <div class="col s12 l4 offset-l4">
+                    <h:form>
+                        <h:messages layout="table" class="red-text"></h:messages>
+                        <div class="input-field">
+                            <h:outputLabel for="cpf">CPF:</h:outputLabel>
+                            <h:inputText id="cpf"
+                                         value="#{integranteBean.integrante.cpf}" />
+                        </div>
+                        <div class="input-field">
+                            <h:outputLabel for="nome">Nome:</h:outputLabel>
+                            <h:inputText id="nome"
+                                         value="#{integranteBean.integrante.nome}" />
+                        </div>
+                        <div class="input-field">
+                            <h:outputLabel for="dataNasc">Data de Nascimento:</h:outputLabel>
+                            <h:inputText id="dataNasc"
+                                         value="#{integranteBean.integrante.dataDeNascimento}" />
+                        </div>
+
+
+                        <h:commandButton value="Cadastrar" action="#{integranteBean.salvar()}"
+                                         class="btn waves-effect waves-teal right" />
+                        <h:commandButton value="Atualizar" action="#{integranteBean.atualizar}"
+                                         class="btn waves-effect waves-teal right" />
+                        <a href="list.xhtml" class="btn waves-effect waves-teal right">Lista de integrantes</a>
+                    </h:form>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>
