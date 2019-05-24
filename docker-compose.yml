@@ -13,5 +13,7 @@ services:
         container_name: aplication_jsf
         links: 
             - db:host-banco
+        volumes:
+            - ./target:/opt/payara/deployments
     
 
